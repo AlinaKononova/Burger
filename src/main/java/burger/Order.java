@@ -41,11 +41,11 @@ public class Order {
   public void calculation(){
     print("How many burgers do you want?");
     setBurger(getQuantity());
-    print("How many sauces do you want?");
+    print("How many sauces do you want? For skipping press 'Enter'");
     setSauce(getQuantity());
-    print("How many cheese do you want?");
+    print("How many cheese do you want? For skipping press 'Enter'");
     setCheese(getQuantity());
-    print("How many meet do you want?");
+    print("How many meet do you want? For skipping press 'Enter'");
     setMeet(getQuantity());
     print(toString());
   }
