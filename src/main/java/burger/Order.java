@@ -4,36 +4,36 @@ import java.util.Scanner;
 
 public class Order {
 
-  private Integer burger;
-  private Integer sauce;
-  private Integer cheese;
-  private Integer meet;
+  private int burger;
+  private int sauce;
+  private int cheese;
+  private int meet;
 
-  public Order setBurger(Integer burger) {
+  public Order setBurger(int burger) {
     this.burger = burger;
     return this;
   }
 
-  public Order setSauce(Integer sauce) {
+  public Order setSauce(int sauce) {
     this.sauce = sauce;
     return this;
   }
 
-  public Order setCheese(Integer cheese) {
+  public Order setCheese(int cheese) {
     this.cheese = cheese;
     return this;
   }
 
-  public Order setMeet(Integer meet) {
+  public Order setMeet(int meet) {
     this.meet = meet;
     return this;
   }
 
   public String toString() {
-    return "Total: " + (this.burger * Price.BURGER.getPrice()
-            + this.sauce * Price.SAUCE.getPrice()
-            + this.cheese * Price.CHEESE.getPrice()
-            + this.meet * Price.MEET.getPrice());
+    return "Total: " + (burger * Price.BURGER.getPrice()
+            + sauce * Price.SAUCE.getPrice()
+            + cheese * Price.CHEESE.getPrice()
+            + meet * Price.MEET.getPrice());
   }
 
   private final Scanner newBurger = new Scanner(System.in);
@@ -50,9 +50,9 @@ public class Order {
     print(toString());
   }
 
-  private Integer getQuantity(){
+  private int getQuantity(){
     String quantity = newBurger.nextLine();
-    Integer resultQuantity = 0;
+    int resultQuantity = 0;
     if(!quantity.equals("")){
       resultQuantity = Integer.parseInt(quantity);
     }
