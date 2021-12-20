@@ -4,41 +4,54 @@ import java.util.Scanner;
 
 public class Order {
 
-  private int burger;
-  private int sauce;
-  private int cheese;
-  private int meet;
+  private int numberBurger;
+  private int numberSauce;
+  private int numberCheese;
+  private int numberMeet;
 
-  public Order setBurger(int burger) {
-    this.burger = burger;
+  public Order setBurger(int numberBurger) {
+    this.numberBurger = numberBurger;
     return this;
   }
 
-  public Order setSauce(int sauce) {
-    this.sauce = sauce;
+  public Order setSauce(int numberSauce) {
+    this.numberSauce = numberSauce;
     return this;
   }
 
-  public Order setCheese(int cheese) {
-    this.cheese = cheese;
+  public Order setCheese(int numberCheese) {
+    this.numberCheese = numberCheese;
     return this;
   }
 
-  public Order setMeet(int meet) {
-    this.meet = meet;
+  public Order setMeet(int numberMeet) {
+    this.numberMeet = numberMeet;
     return this;
   }
 
   public String toString() {
-    return "Total: " + (burger * Price.BURGER.getPrice()
-            + sauce * Price.SAUCE.getPrice()
-            + cheese * Price.CHEESE.getPrice()
-            + meet * Price.MEET.getPrice());
+    return "Total: " + (numberBurger * Price.BURGER.getPrice()
+            + numberSauce * Price.SAUCE.getPrice()
+            + numberCheese * Price.CHEESE.getPrice()
+            + numberMeet * Price.MEET.getPrice());
   }
 
   private final Scanner newBurger = new Scanner(System.in);
 
-  public void calculation(){
+  private int getQuantity() {
+    String quantity = newBurger.nextLine();
+    int resultQuantity = 0;
+    if (!quantity.equals("")) {
+      resultQuantity = Integer.parseInt(quantity);
+    }
+    return resultQuantity;
+  }
+
+  private void print(String value) {
+    System.out.println(value);
+  }
+
+  public void calculation() {
     print("How many burgers do you want?");
     setBurger(getQuantity());
     print("How many sauces do you want? For skipping press 'Enter'");
@@ -48,19 +61,6 @@ public class Order {
     print("How many meet do you want? For skipping press 'Enter'");
     setMeet(getQuantity());
     print(toString());
-  }
-
-  private int getQuantity(){
-    String quantity = newBurger.nextLine();
-    int resultQuantity = 0;
-    if(!quantity.equals("")){
-      resultQuantity = Integer.parseInt(quantity);
-    }
-    return resultQuantity;
-  }
-
-  private void print(String value){
-    System.out.println(value);
   }
 
 }
