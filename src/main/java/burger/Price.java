@@ -6,13 +6,13 @@ public enum Price {
   CHEESE(20),
   MEET(30);
 
-  private Integer price;
+  private int price;
 
-  Price(Integer price){
+  Price(int price){
     this.price = price;
   }
 
-  public Integer getPrice(){
+  public int getPrice(){
     return this.price;
   }
 
