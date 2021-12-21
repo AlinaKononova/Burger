@@ -36,24 +36,20 @@ public class Order {
   private int numberCheese;
   private int numberMeet;
 
-  public Order setBurger(int numberBurger) {
+  public void setBurger(int numberBurger) {
     this.numberBurger = numberBurger;
-    return this;
   }
 
-  public Order setSauce(int numberSauce) {
+  public void setSauce(int numberSauce) {
     this.numberSauce = numberSauce;
-    return this;
   }
 
-  public Order setCheese(int numberCheese) {
+  public void setCheese(int numberCheese) {
     this.numberCheese = numberCheese;
-    return this;
   }
 
-  public Order setMeet(int numberMeet) {
+  public void setMeet(int numberMeet) {
     this.numberMeet = numberMeet;
-    return this;
   }
 
   public String toString() {
